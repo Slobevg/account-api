@@ -37,6 +37,9 @@ public class AccountService {
 
     @Transactional(isolation = Isolation.REPEATABLE_READ)
     public void transfer(Long from, Long to, BigDecimal money) {
+        if (from.equals(to)) {
+            return;
+        }
         withdraw(from, money);
         deposit(to, money);
     }

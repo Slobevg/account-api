@@ -1,0 +1,74 @@
+{
+	"variables": [],
+	"info": {
+		"name": "some_requests",
+		"_postman_id": "0aa8cab8-4dfd-0b41-8fe9-0aa2721e7b54",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/accounts/transfer",
+			"request": {
+				"url": "localhost:8080/accounts/transfer",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"from\": 2, \"to\": 1, \"money\": 9 }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/accounts/withdraw",
+			"request": {
+				"url": "localhost:8080/accounts/withdraw",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\": 1, \"money\": 9 }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/accounts/deposit",
+			"request": {
+				"url": "localhost:8080/accounts/deposit",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\": 1, \"money\": 9 }"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
