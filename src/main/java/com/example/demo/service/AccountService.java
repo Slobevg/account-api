@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.model.AccountEntity;
 import com.example.demo.repository.AccountRepository;
+import com.example.demo.service.exception.AccountNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -19,7 +20,7 @@ public class AccountService {
     public AccountEntity deposit(Long id, BigDecimal money) {
         AccountEntity account = accountRepository.findOne(id);
         if (account == null) {
-            throw new RuntimeException("account not found, id " + id);
+            throw new AccountNotFoundException(id);
         }
         account.addMoney(money);
         return account;
@@ -29,7 +30,7 @@ public class AccountService {
     public AccountEntity withdraw(Long id, BigDecimal money) {
         AccountEntity account = accountRepository.findOne(id);
         if (account == null) {
-            throw new RuntimeException("account not found, id " + id);
+            throw new AccountNotFoundException(id);
         }
         account.subtractMoney(money);
         return account;
